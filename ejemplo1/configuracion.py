@@ -1,10 +1,11 @@
 from sqlalchemy import create_engine
+
 # se genera en enlace al gestor de base de
 # datos
 # para el ejemplo se usa la base de datos
 # sqlite
 
-# engine = create_engine('sqlite:///demobase.db', echo=True)
+engine = create_engine("sqlite:///demobase.db", echo=True)
 
 # mysql
 # pip install mysql-connector-python
@@ -13,4 +14,4 @@ from sqlalchemy import create_engine
 # postgres
 # sudo apt install libpq-dev
 # pip install psycopg2
-engine = create_engine("postgresql+psycopg2://usuario:secreto@0.0.0.0:5432/mibase", echo=True)
+# engine = create_engine("postgresql+psycopg2://usuario:secreto@0.0.0.0:5432/mibase", echo=True)

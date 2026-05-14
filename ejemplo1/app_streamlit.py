@@ -1,7 +1,7 @@
 import streamlit as st
-from sqlalchemy.orm import sessionmaker
-from crear_base import Saludo
 from configuracion import engine
+from crear_base import Saludo
+from sqlalchemy.orm import sessionmaker
 
 # Crear sesión
 Session = sessionmaker(bind=engine)
@@ -13,8 +13,9 @@ saludos = session.query(Saludo).all()
 # Mostrar con Streamlit
 st.title("Presentación de todos los Saludos")
 
-for saludo  in saludos:
-    st.write(saludo)
+for saludo in saludos:
+    cadena = f"{saludo.mensaje.upper()} {saludo.tipo.upper()}"
+    st.write(cadena)
     st.markdown("---")
 
 st.markdown("---")
